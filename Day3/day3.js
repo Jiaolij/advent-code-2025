@@ -5,6 +5,7 @@ const inputsArr = fs.readFileSync("day3-input.txt", "utf-8")
                     .map(line => line.trim())
                     .filter(Boolean);
 
+// P1
 const getMaxPair = digitString => {
   const digits = digitString.split('').map(Number);
 
@@ -17,7 +18,7 @@ const getMaxPair = digitString => {
   return firstMaxNum * 10 + secondMaxNum;
 }
 
-// Get max 12 digits
+// P2
 const max12Digits = line => {
     const k = 12;
     const digits = [...line].map(Number);

@@ -5,11 +5,13 @@ const inputsArr = fs.readFileSync("day2-input.txt", "utf-8")
                     .split(",")
                     .filter(Boolean);
 
+// P1
 const isValidRepeatedID1 = (id) => {
   // Digits, even length, one group repeated twice
   return /^(\d+)\1$/.test(id);
 }
 
+// P2
 const isValidRepeatedID2 = (id) => {
   // Digits, digit-sequence repeated 2+ times
   return /^(\d+)\1+$/.test(id);

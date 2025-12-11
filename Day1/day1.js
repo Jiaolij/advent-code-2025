@@ -1,6 +1,5 @@
 const fs = require("fs");
 
-// Load rotations from a file (one per line)
 const rotations = fs.readFileSync("day1-input.txt", "utf-8")
                     .split("\n")
                     .map(line => line.trim())
@@ -41,5 +40,5 @@ for (const move of rotations) {
     getZerosP2(direction, distance);
 }
 
-console.log("Password (number of times dial points at 0):", countZeros_1);
-console.log("Password (method 0x434C49434B):", countZeros_2);
+console.log("P1 - Password (number of times dial points at 0):", countZeros_1);
+console.log("P2 - Password (method 0x434C49434B):", countZeros_2);

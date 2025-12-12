@@ -1,9 +1,9 @@
-const fs = require('fs');
+const fs = require("fs");
 
 const readColumnsFromFile = (filePath) =>
-  fs.readFileSync(filePath, 'utf8')
+  fs.readFileSync(filePath, "utf8")
     .trim()
-    .split('\n')
+    .split("\n")
     .map(line => line.trim().split(/\s+/))
     .reduce((columns, row) => {
       row.forEach((value, i) => {
@@ -14,7 +14,7 @@ const readColumnsFromFile = (filePath) =>
     }, []);
 
 const applyOperator = (numbers, operator) =>
-  operator === '*'
+  operator === "*"
     ? numbers.reduce((acc, n) => acc * n, 1)
     : numbers.reduce((acc, n) => acc + n, 0);
 
@@ -28,21 +28,21 @@ const computeColumnResults = (columns) =>
     })
     .reduce((sum, val) => sum + val, 0);
 
-const columns = readColumnsFromFile('day6-input.txt');
-console.log('P1 - finalSum:', computeColumnResults(columns));
+const columns = readColumnsFromFile("day6-input.txt");
+console.log("P1 - finalSum:", computeColumnResults(columns));
 
 // P2
 const solveCephalopodMathTotal_1 = (input) => {
-  const lines = input.split('\n');
+  const lines = input.split("\n");
   const width = Math.max(...lines.map(l => l.length));
   const height = lines.length;
-  const paddedRows = lines.map(line => line.padEnd(width, ' '));
+  const paddedRows = lines.map(line => line.padEnd(width, " "));
 
   let total = 0;
   let currentGroup = [];
 
   for (let col = 0; col <= width; col++) { // note: <= to flush last group
-    const isBlank = col === width || paddedRows.every(row => row[col] === ' ');
+    const isBlank = col === width || paddedRows.every(row => row[col] === " ");
 
     if (isBlank) {
       if (currentGroup.length) {
@@ -54,7 +54,7 @@ const solveCephalopodMathTotal_1 = (input) => {
               .slice(0, height - 1)
               .map(row => row[c])
               .filter(ch => /\d/.test(ch))
-              .join('')
+              .join("")
           )
           .filter(Boolean)
           .map(Number);
@@ -70,5 +70,5 @@ const solveCephalopodMathTotal_1 = (input) => {
   return total;
 };
 
-const puzzleInput = fs.readFileSync('day6-input.txt', 'utf8').trimEnd();
+const puzzleInput = fs.readFileSync("day6-input.txt", "utf8").trimEnd();
 console.log(solveCephalopodMathTotal_1(puzzleInput));

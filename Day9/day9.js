@@ -1,12 +1,12 @@
-import fs from 'fs';
+const fs = require("fs");
 
 // Helpers
-const readFile = file => fs.readFileSync(file, 'utf8').trim();
+const readFile = file => fs.readFileSync(file, "utf8").trim();
 
 const parseCoordinates = text =>
   text
     .split(/\r?\n/)
-    .map(line => line.split(',').map(Number))
+    .map(line => line.split(",").map(Number))
     .filter(([x, y]) => !isNaN(x) && !isNaN(y));
 
 const sortPair = (a, b) => (a < b ? [a, b] : [b, a]);
@@ -61,8 +61,7 @@ const executePart2 = tiles => {
   }, 0);
 };
 
-const file = 'day9-input.txt';
-const points = parseCoordinates(readFile(file));
+const points = parseCoordinates(readFile("day9-input.txt"));
 
-console.log('P1:', findMaxAreaPair(points).maxArea);
-console.log('P2:', executePart2(points));
+console.log("P1:", findMaxAreaPair(points).maxArea);
+console.log("P2:", executePart2(points));

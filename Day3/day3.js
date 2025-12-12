@@ -7,7 +7,7 @@ const inputsArr = fs.readFileSync("day3-input.txt", "utf-8")
 
 // P1
 const getMaxPair = digitString => {
-  const digits = digitString.split('').map(Number);
+  const digits = digitString.split("").map(Number);
 
   // First max
   const firstMaxNum = Math.max(...digits.slice(0, digits.length - 1));

@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@uandi/javascript-lp-solver": "^0.4.5",
+    "glpk.js": "^4.0.2",
+    "z3-solver": "^4.15.4"
+  }
+}

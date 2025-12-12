@@ -25,7 +25,7 @@ for (const pairs of inputsArr) {
     const start = Number(temp[0]);
     const end = Number(temp[1]);
 
-    if (temp[0][0] === '0'){
+    if (temp[0][0] === "0"){
         return;
     }
 

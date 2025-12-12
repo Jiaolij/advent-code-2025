@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require("fs");
 
 // Helpers
 const getDistance = (c1, c2) => {
@@ -15,13 +15,13 @@ const unionFind = (map, g1, g2) => {
 };
 
 const parseInput = (filename) => {
-  const input = fs.readFileSync(filename, 'utf-8').trim().split('\n');
+  const input = fs.readFileSync(filename, "utf-8").trim().split("\n");
 
   const coords = [];
   const map = new Map();
 
   input.forEach((line, i) => {
-    const [x, y, z] = line.split(',').map(Number);
+    const [x, y, z] = line.split(",").map(Number);
     const coord = { x, y, z };
     coords.push(coord);
     map.set(coord, i);
@@ -96,9 +96,7 @@ const solvePart2 = (map, dist) => {
   return lastConnected.c1.x * lastConnected.c2.x;
 };
 
-// ============ Main ============
-
-const { coords, map } = parseInput('day8-input.txt');
+const { coords, map } = parseInput("day8-input.txt");
 const dist = calculateDistances(coords);
 
 console.log("P1", solvePart1(map, dist));
